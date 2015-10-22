@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+10.times do
+  Member.create!(name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Internet.password(6))
+end
+
+ members = Member.all
+
+Answer.create!(member_id: 1, question_id: 1, accepted_answer: true, answer_text: "Yes, you can do that but dont forget to add milk on it!")
+Answer.create!(member_id: 2, question_id: 2, accepted_answer: false, answer_text: "I would push the cats off the wall first then buy some dogs.")
+Answer.create!(member_id: 3, question_id: 3, accepted_answer: true, answer_text: "No! Never give up on your Dreams unless the are nightmares!")
+
+answers = Answer.all
+
+Question.create!(member_id: 1, title: "how to bake a cake?", description: "I have apologies to make. Help me.")
+Question.create!(member_id: 2, title: "why are my hands stuck together?", description: "I don't know what happened but I need it undone.")
+Question.create!(member_id: 3, title: "who framed roger rabbit?", description: "is this movie biographical?")
+ questions = Question.all
