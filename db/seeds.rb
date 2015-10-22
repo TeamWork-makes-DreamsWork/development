@@ -10,3 +10,5 @@
 10.times do
   Member.create!(name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Internet.password(6))
 end
+
+ members = Member.all
