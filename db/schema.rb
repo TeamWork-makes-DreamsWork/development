@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022204300) do
+ActiveRecord::Schema.define(version: 20151022211835) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "member_id"
+    t.text     "answer_text"
+    t.boolean  "accepted_answer"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +29,23 @@ ActiveRecord::Schema.define(version: 20151022204300) do
     t.string   "token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "member_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.integer  "member_id"
+    t.boolean  "vote"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

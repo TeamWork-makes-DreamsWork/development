@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :members
+  resources :votes
+  resources :answers
+  resources :questions
+  resources :sessions
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
