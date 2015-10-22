@@ -12,3 +12,12 @@
 end
 
  members = Member.all
+
+Answer.create!(member_id: 1, question_id: 1, accepted_answer: true,
+answer: "Yes, you can do that but dont forget to add milk on it!")
+Answer.create!(member_id: 2, question_id: 2, accepted_answer: false,
+answer: "I would push the cats off the wall first then buy some dogs.")
+Answer.create!(member_id: 3, question_id: 3, accepted_answer: true,
+answer: "No! Never give up on your Dreams unless the are nightmares!")
+
+answers = Answer.all
