@@ -21,3 +21,8 @@ Answer.create!(member_id: 3, question_id: 3, accepted_answer: true,
 answer: "No! Never give up on your Dreams unless the are nightmares!")
 
 answers = Answer.all
+
+Question.create!(member_id: 1, title: "how to bake a cake?", description: "I have apologies to make. Help me.")
+Question.create!(member_id: 2, title: "why are my hands stuck together?", description: "I don't know what happened but I need it undone.")
+Question.create!(member_id: 3, title: "who framed roger rabbit?", description: "is this movie biographical?")
+ questions = Question.all
