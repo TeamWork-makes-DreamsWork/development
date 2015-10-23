@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def new
   end
 
-  def destroy
+  def check_token
+    @member = member.find_by_token(params[:token])
   end
+
 end

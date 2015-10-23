@@ -22,9 +22,6 @@ Answer.create!(member_id: 6, question_id: 6, accepted_answer: true, answer_text:
 Answer.create!(member_id: 7, question_id: 7, accepted_answer: true, answer_text: "Yes, what we watch is just an interpretation of actual history, some fact have been lost through time.")
 Answer.create!(member_id: 8, question_id: 8, accepted_answer: false, answer_text: "Yes, by definition, you must have cats.")
 
-
-
-
 answers = Answer.all
 
 Question.create!(member_id: 1, title: "Wow to bake a cake?", description: "I have apologies to make. Help me.")
@@ -37,3 +34,12 @@ Question.create!(member_id: 7, title: "Did Star Wars actually happen and are we 
 Question.create!(member_id: 8, title: "Do you have to have cats to be a cat lady?", description: "I want to be a cat lady but don't want cats.")
 
 questions = Question.all
+
+Vote.create!(question_id: 1, answer_id: 1, member_id: 2, vote: false)
+Vote.create!(question_id: 1, answer_id: 1, member_id: 3, vote: true)
+Vote.create!(question_id: 2, answer_id: 2, member_id: 1, vote: false)
+Vote.create!(question_id: 2, answer_id: 2, member_id: 3, vote: true)
+Vote.create!(question_id: 3, answer_id: 3, member_id: 1, vote: false)
+Vote.create!(question_id: 3, answer_id: 3, member_id: 2, vote: true)
+
+votes = Vote.all
