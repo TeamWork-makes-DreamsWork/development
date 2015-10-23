@@ -35,11 +35,25 @@ Question.create!(member_id: 8, title: "Do you have to have cats to be a cat lady
 
 questions = Question.all
 
-Vote.create!(question_id: 1, answer_id: 1, member_id: 2, vote: false)
-Vote.create!(question_id: 1, answer_id: 1, member_id: 3, vote: true)
-Vote.create!(question_id: 2, answer_id: 2, member_id: 1, vote: false)
-Vote.create!(question_id: 2, answer_id: 2, member_id: 3, vote: true)
-Vote.create!(question_id: 3, answer_id: 3, member_id: 1, vote: false)
-Vote.create!(question_id: 3, answer_id: 3, member_id: 2, vote: true)
+
+
+
+table = ["Answer", "Question"]
+
+10.times do
+  Vote.create!(member_id: rand(10),
+    vote: rand(2),
+    vote_for_id: rand(10),
+    vote_for_type: table[rand(2)])
+end
 
 votes = Vote.all
+
+
+
+# Vote.create!(question_id: 1, answer_id: 1, member_id: 2, vote: false)
+# Vote.create!(question_id: 1, answer_id: 1, member_id: 3, vote: true)
+# Vote.create!(question_id: 2, answer_id: 2, member_id: 1, vote: false)
+# Vote.create!(question_id: 2, answer_id: 2, member_id: 3, vote: true)
+# Vote.create!(question_id: 3, answer_id: 3, member_id: 1, vote: false)
+# Vote.create!(question_id: 3, answer_id: 3, member_id: 2, vote: true)

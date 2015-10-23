@@ -1,10 +1,10 @@
 class CreateVotes < ActiveRecord::Migration
   def change
     create_table :votes do |t|
-      t.integer :question_id
-      t.integer :answer_id
       t.integer :member_id
       t.boolean :vote
+      t.integer :vote_for_id
+      t.string :vote_for_type
 
       t.timestamps null: false
     end
