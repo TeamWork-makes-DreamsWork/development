@@ -9,7 +9,6 @@ class AnswersController < ApplicationController
   def new
   end
 
-  def destroy
-  end
-
+  # def destroy
+  # end
 end

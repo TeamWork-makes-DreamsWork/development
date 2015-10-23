@@ -13,6 +13,6 @@ class MembersController < ApplicationController
   def new
   end
 
-  def destroy
-  end
+  # def destroy
+  # end
 end

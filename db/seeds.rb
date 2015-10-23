@@ -23,3 +23,12 @@ Question.create!(member_id: 1, title: "how to bake a cake?", description: "I hav
 Question.create!(member_id: 2, title: "why are my hands stuck together?", description: "I don't know what happened but I need it undone.")
 Question.create!(member_id: 3, title: "who framed roger rabbit?", description: "is this movie biographical?")
  questions = Question.all
+
+Vote.create!(question_id: 1, answer_id: 1, member_id: 2, vote: false)
+Vote.create!(question_id: 1, answer_id: 1, member_id: 3, vote: true)
+Vote.create!(question_id: 2, answer_id: 2, member_id: 1, vote: false)
+Vote.create!(question_id: 2, answer_id: 2, member_id: 3, vote: true)
+Vote.create!(question_id: 3, answer_id: 3, member_id: 1, vote: false)
+Vote.create!(question_id: 3, answer_id: 3, member_id: 2, vote: true)
+
+votes = Vote.all
