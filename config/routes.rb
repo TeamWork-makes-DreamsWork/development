@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :members, only: :show
+  resources :members
   resources :votes
   resources :answers
   resources :questions
