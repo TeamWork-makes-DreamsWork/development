@@ -7,7 +7,12 @@ class MembersController < ApplicationController
   end
 
   def show
-    @members = Member.all
+    @member = Member.find(params[:id])
+    if member.check_token == params[:token]
+      render json: member
+    else
+      render json: "Nice try, haxor"
+    end
   end
 
   def new
