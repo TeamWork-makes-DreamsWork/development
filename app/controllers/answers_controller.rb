@@ -1,11 +1,11 @@
 class AnswersController < ApplicationController
+
   def index
     @answers = Answer.all
   end
 
   def create
     @answer = Answer.new(answer_params)
-
     if @answer.save
       render json: answer
     else
@@ -28,5 +28,6 @@ class AnswersController < ApplicationController
   def check_token
     # @member = member.find_by_token(params[:token])
   end
+
 
 end

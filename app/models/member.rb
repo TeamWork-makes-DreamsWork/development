@@ -2,7 +2,9 @@ class Member < ActiveRecord::Base
   has_many :votes
   has_many :questions
   has_many :answers
-  # has_secure_password
+  # validates :email, uniqueness: true
+  # validates :name, :email, :password, presence: true
+  has_secure_password
   before_create :assign_token
 
   def assign_token
