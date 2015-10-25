@@ -1,4 +1,5 @@
 class Vote < ActiveRecord::Base
+  belongs_to :vote_for, polymorphic: true
   belongs_to :member
   belongs_to :answer
   belongs_to :question
@@ -12,5 +13,5 @@ class Vote < ActiveRecord::Base
     end
     array.inject(:+)
   end
-  
+
 end

@@ -2,16 +2,16 @@ class VotesController < ApplicationController
   def index
     @votes = Vote.all
   end
-
   def create
-    @votes = Vote.all
+    vote = Vote.new(vote: params[:vote], member_id: params[:member_id], vote_for_id: params[:vote_for_id], vote_for_type: params[:vote_for_type])
+   if vote.save
+     render json: vote
+   else
+     render json: vote.errors
+   end
   end
 
-  def show
-    @votes = Vote.all
-  end
+  def destroy
 
-  def new
-    @votes = Vote.all
   end
 end
