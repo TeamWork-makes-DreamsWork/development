@@ -6,7 +6,8 @@ class MembersController < ApplicationController
   end
 
   def create
-    m = Member.new(member_params)
+    m = Member.new(params[:name], parmas[:email], params[:password], params[:token])
+)
      if m.save
        render m
      elsif m.errors
