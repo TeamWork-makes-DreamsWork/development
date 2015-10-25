@@ -7,11 +7,7 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
-    if @member.save
-      render json: member
-    else
-      render json: "Your member was not created."
-    end
+    @member.save ? (render 'show'):(render 'error')
   end
 
   def show
@@ -22,5 +18,14 @@ class MembersController < ApplicationController
   end
 
   def destroy
+    @member.destroy
+    render json: "Member deleted"
   end
+private
+
+  def member_params
+    params.permit(:name, :email, :password)
+  end
+
+
 end
