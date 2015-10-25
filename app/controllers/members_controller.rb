@@ -6,24 +6,18 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
-    if @member.save
-      (render 'show')
-    else
-      (render 'error')
-    end
+    person = Member.new(user_params)
+     if person.save
+       render person
+     elsif person.errors
+       render json: "Bad Request"
+     else
+       render json: "Could not save member"
+     end
   end
 
   def show
 
-  end
-
-  def update
-    if @user.update(user_params)
-      (render 'show')
-    else
-      (render 'error')
-    end
   end
 
   def new
@@ -36,7 +30,7 @@ class MembersController < ApplicationController
 private
 
   def member_params
-    params.permit(:name, :email, :password)
+    params.permit(:name, :email, :password, :token)
   end
 
 
