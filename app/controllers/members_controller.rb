@@ -41,7 +41,7 @@ def set_member
   end
 
   def member_params
-    params.require(:member).permit(:name, :email, :password, :token)
+    params.require(:member).permit(:name, :email, :password)
   end
 
 
