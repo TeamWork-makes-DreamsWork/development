@@ -4,6 +4,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new(question_params)
+
+    if @question.save
+      render json: question
+      end
+    else
+      render json: "your question was not saved."
+    end
   end
 
   def new
