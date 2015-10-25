@@ -8,7 +8,6 @@ class QuestionsController < ApplicationController
 
     if @question.save
       render json: question
-      end
     else
       render json: "your question was not saved."
     end
