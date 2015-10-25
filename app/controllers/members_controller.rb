@@ -6,10 +6,10 @@ class MembersController < ApplicationController
   end
 
   def create
-    person = Member.new(user_params)
-     if person.save
+    m = Member.new(user_params)
+     if m.save
        render person
-     elsif person.errors
+     elsif m.errors
        render json: "Bad Request"
      else
        render json: "Could not save member"
