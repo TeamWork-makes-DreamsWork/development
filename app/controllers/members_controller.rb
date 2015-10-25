@@ -10,8 +10,6 @@ class MembersController < ApplicationController
 )
      if m.save
        render m
-     elsif m.errors
-       render json: "Bad Request"
      else
        render json: "Could not save member"
      end
@@ -43,9 +41,9 @@ def set_member
     @member = Member.find(params[:id])
   end
 
-  # def member_params
-  #   params.require(:member).permit(:name, :email, :password, :token)
-  # end
+  def member_params
+    params.require(:member).permit(:name, :email, :password, :token)
+  end
 
 
 end
