@@ -3,5 +3,6 @@ class Answer < ActiveRecord::Base
   belongs_to :member
   has_many :votes, as: :votes_for
 
-  #before_create :check_token
+  before_create :check_token
+
 end
