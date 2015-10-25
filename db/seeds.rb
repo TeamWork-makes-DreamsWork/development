@@ -13,44 +13,19 @@ end
 
  members = Member.all
 
-Answer.create!(member_id: 1, question_id: 1, accepted_answer: true, answer_text: "With Flower Power! Wait, I mean Flour Power!")
-Answer.create!(member_id: 2, question_id: 2, accepted_answer: false, answer_text: "Glue. Probably because Glue.")
-Answer.create!(member_id: 3, question_id: 3, accepted_answer: true, answer_text: "Carmen San Diego, You will never catch her!")
-Answer.create!(member_id: 4, question_id: 4, accepted_answer: true, answer_text: "Yes, but what bro doesn't!?")
-Answer.create!(member_id: 5, question_id: 5, accepted_answer: false, answer_text: "Yes, you and your bike can do anything your heart desires.")
-Answer.create!(member_id: 6, question_id: 6, accepted_answer: true, answer_text: "Yes, Bruce Lee says we should be water, Bruce Lee is good for the soul, therefor water is good for the soul.")
-Answer.create!(member_id: 7, question_id: 7, accepted_answer: true, answer_text: "Yes, what we watch is just an interpretation of actual history, some fact have been lost through time.")
-Answer.create!(member_id: 8, question_id: 8, accepted_answer: false, answer_text: "Yes, by definition, you must have cats.")
+50.times do
+  Question.create!(member_id: rand(1..25), title: Faker::Lorem.sentence.chomp('.') + ('?'), description: Faker::Lorem.paragraph)
+end
+ questions = Question.all
 
+50.times do
+  Answer.create!(member_id: rand(1..25), question_id: rand(1..50), accepted_answer: false, answer_text: Faker::Lorem.paragraph(2))
+end
 answers = Answer.all
 
-Question.create!(member_id: 1, title: "How do I bake a cake?", description: "I have apologies to make. Help me.")
-Question.create!(member_id: 2, title: "Why are my hands stuck together?", description: "I don't know what happened but I need it undone.")
-Question.create!(member_id: 3, title: "Who framed Roger Rabbit?", description: "Is this movie biographical?")
-Question.create!(member_id: 4, title: "Do you even lift bro?", description: "I like to workout every day!")
-Question.create!(member_id: 5, title: "Can you travel to China on a bike from America?", description: "I love my bike and don't want to travel without it.")
-Question.create!(member_id: 6, title: "Is swimming good for the soul?", description: "I want to swim more but is it good for the soul?")
-Question.create!(member_id: 7, title: "Did Star Wars actually happen and are we now watching history?", description: "Blows my mind!")
-Question.create!(member_id: 8, title: "Do you have to have cats to be a cat lady?", description: "I want to be a cat lady but don't want cats.")
-
-questions = Question.all
-
-
-
-
 table = ["Answer", "Question"]
-
 10.times do
   Vote.create!(member_id: rand(10), vote: rand(2), vote_for_id: rand(10), vote_for_type: table[rand(2)])
 end
 
 votes = Vote.all
-
-
-
-# Vote.create!(question_id: 1, answer_id: 1, member_id: 2, vote: false)
-# Vote.create!(question_id: 1, answer_id: 1, member_id: 3, vote: true)
-# Vote.create!(question_id: 2, answer_id: 2, member_id: 1, vote: false)
-# Vote.create!(question_id: 2, answer_id: 2, member_id: 3, vote: true)
-# Vote.create!(question_id: 3, answer_id: 3, member_id: 1, vote: false)
-# Vote.create!(question_id: 3, answer_id: 3, member_id: 2, vote: true)
