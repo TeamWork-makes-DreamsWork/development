@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'votes/create'
-
   get 'votes/destroy'
 
   resources :members
