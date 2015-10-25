@@ -8,7 +8,6 @@ class AnswersController < ApplicationController
 
     if @answer.save
       render json: answer
-      end
     else
       render json: "your answer was not created."
     end

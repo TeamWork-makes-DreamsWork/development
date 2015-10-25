@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  
+
   def index
     @members = Member.all
   end
@@ -13,7 +15,7 @@ class MembersController < ApplicationController
   end
 
   def show
-  
+
   end
 
   def new
