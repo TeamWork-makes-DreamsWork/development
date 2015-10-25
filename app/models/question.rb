@@ -4,4 +4,8 @@ class Question < ActiveRecord::Base
   belongs_to :member
 
   #before_create :check_token
+
+  def total_vote
+    
+  end
 end

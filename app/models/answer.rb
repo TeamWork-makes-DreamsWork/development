@@ -4,4 +4,5 @@ class Answer < ActiveRecord::Base
   has_many :votes
 
   #before_create :check_token
+
 end
