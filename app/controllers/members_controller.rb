@@ -6,7 +6,7 @@ class MembersController < ApplicationController
   end
 
   def create
-    m = Member.new(user_params)
+    m = Member.new(member_params)
      if m.save
        render m
      elsif m.errors
