@@ -4,6 +4,12 @@ class MembersController < ApplicationController
   end
 
   def create
+    @member = Member.new(member_params)
+    if @member.save
+      render json: member
+    else
+      render json: "Your member was not created."
+    end
   end
 
   def show
