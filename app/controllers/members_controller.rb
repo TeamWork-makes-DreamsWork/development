@@ -7,11 +7,23 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
-    @member.save ? (render 'show'):(render 'error')
+    if @member.save
+      (render 'show')
+    else
+      (render 'error')
+    end
   end
 
   def show
 
+  end
+
+  def update
+    if @user.update(user_params)
+      (render 'show')
+    else
+      (render 'error')
+    end
   end
 
   def new
