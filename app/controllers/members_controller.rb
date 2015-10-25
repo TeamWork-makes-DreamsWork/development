@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  
+
 
   def index
     @members = Member.all
@@ -21,6 +21,6 @@ class MembersController < ApplicationController
   def new
   end
 
-  # def destroy
-  # end
+  def destroy
+  end
 end
