@@ -6,7 +6,7 @@ class MembersController < ApplicationController
   end
 
   def create
-    m = Member.new(params[:name], parmas[:email], params[:password], params[:token])
+    m = Member.new(name: params[:name], email: parmas[:email], password: params[:password])
 )
      if m.save
        render m
@@ -43,9 +43,9 @@ def set_member
     @member = Member.find(params[:id])
   end
 
-  def member_params
-    params.require(:member).permit(:name, :email, :password, :token)
-  end
+  # def member_params
+  #   params.require(:member).permit(:name, :email, :password, :token)
+  # end
 
 
 end
