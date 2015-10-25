@@ -11,4 +11,10 @@ class Question < ActiveRecord::Base
   def total_vote
 
   end
+
+  def search(q)
+    results = Question.joins(:answers).where("genes LIKE ? OR questions.description LIKE ? OR answers.answer_text LIKE ?",q ,q ,q)
+    return results
+  end
+
 end

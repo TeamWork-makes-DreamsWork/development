@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
   end
 
   def check_token
-    @member = member.find_by_token(params[:token])
+    # @member = member.find_by_token(params[:token])
   end
 
 end
