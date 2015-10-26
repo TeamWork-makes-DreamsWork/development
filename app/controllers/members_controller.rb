@@ -44,5 +44,4 @@ def set_member
     params.permit(:name, :email, :password_digest)
   end
 
-
 end
