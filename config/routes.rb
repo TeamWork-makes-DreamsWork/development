@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'votes/create'
-  get 'votes/destroy'
+  post    'login' => 'sessions#create'
+  delete  'logout' => 'sessions#destroy'
 
   resources :members
   resources :votes
